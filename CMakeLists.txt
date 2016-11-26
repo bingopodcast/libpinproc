@@ -69,11 +69,14 @@ if(VERBOSE)
 endif()
 
 # use -DEXTRA_INC="<path>;<path>" and -DEXTRA_LINK="<path>;<path>"
-include_directories(${PINPROC_SOURCE_DIR}/include ${EXTRA_INC} /usr/local/include)
+#include_directories(${PINPROC_SOURCE_DIR}/include ${EXTRA_INC} /usr/local/include )
+include_directories(${PINPROC_SOURCE_DIR}/include ${EXTRA_INC} /usr/local/include ${FTDI_INC} /usr/local/include/libftdi1 /usr/local/include/libusb-1.0)
 link_directories(${EXTRA_LINK} /usr/local/lib)
 
 set(YAML_CPP_LIB "yaml-cpp")
 set(YAML_CPP_LIB_DBG "${YAML_CPP_LIB}")
+set(lib_ftdi_usb usb-1.0 ftdi1)
+
 
 
 ###
